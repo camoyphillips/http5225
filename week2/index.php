@@ -9,19 +9,12 @@
     <h1>Hello Hello</h1>
 
     <?php
+        $firstname = "Camoy";
+        $lastname = "Phillips";
 
-    $firstname="Camoy";
-    $lastname="Phillips";
-
-
-
-    echo = $firstname . $lastname . "";
-
-
-
-
-
-?>
+    
+        echo $firstname . " " . $lastname;
+    ?>
     
 </body>
 </html>

@@ -11,7 +11,7 @@ function getUsers() {
     return json_decode($data, true);
 }
 
-// Get the list of users
+
 $users = getUsers();
 ?>
 
@@ -19,10 +19,26 @@ $users = getUsers();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User List from JSONPlaceholder to Diosplay</title>
+    <title>User List from JSONPlaceholder to Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f4f4f4;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>User Information for Display</h1>
+    <h1>User Information</h1>
 
     <?php if (!empty($users)): ?>
         <ul>
@@ -32,11 +48,11 @@ $users = getUsers();
                     <strong>Email:</strong> <?= htmlspecialchars($user['email']) ?><br>
                     <strong>Street:</strong> <?= htmlspecialchars($user['address']['street']) ?><br>
                     <strong>City:</strong> <?= htmlspecialchars($user['address']['city']) ?>
-                </li><br>
+                </li>
             <?php endforeach; ?>
         </ul>
     <?php else: ?>
-        <p>Can't fetch user data at this time for you.</p>
+        <p>Can't fetch user data at this time. Please try again later.</p>
     <?php endif; ?>
 </body>
 </html>
